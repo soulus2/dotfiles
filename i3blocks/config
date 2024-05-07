@@ -1,0 +1,52 @@
+command=$SCRIPT_DIR/$BLOCK_NAME
+separator_block_width=20
+markup=none
+
+[eyedropper]
+command=eyedropper/eyedropper
+full_text=<span foreground="#ffffff">󰈊 </span>
+instance=#ffffff
+markup=pango
+CLIPBOARD=true
+
+[volume]
+label=♪ 
+command=volume/volume
+interval=1
+signal=1
+
+[wifi]
+command=wifi/wifi
+INTERFACE=wlan0
+interval=10
+separator=true
+
+[time]
+color=#e0def4
+command=date '+%H:%M:%S'
+interval=1
+
+[showdate]
+color=#f6c177
+full_text=󰃭
+min_width=20
+command=date '+%d/%m/%y '
+
+[battery]
+label=󰁹 
+color=#f6c177
+command=acpi -b | grep -E -o '[0-9][0-9]?%'
+interval=5
+
+[reboot]
+color=#eb6f92
+full_text=󰑓
+min_width=20
+command=reboot
+
+[shutdown]
+color=#eb6f92
+full_text=󰐥
+min_width=20
+command=shutdown now
+
