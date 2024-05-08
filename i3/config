@@ -10,7 +10,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-
+gaps inner 0px
+gaps outer 0px
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:AgaveNerdFontMono 10
@@ -98,6 +99,8 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
+bindsym $mod+Shift+s sticky toggle 
+
 
 # toggle tiling / lofoating
 bindsym $mod+Shift+space floating toggle
@@ -196,7 +199,7 @@ set $inactive-text-color #6E6A86
 set $urgent-bg-color     #EB6F92
 # window colors
 #                       border              background          text                 indicator
-client.focused          $bg-color           $bg-color           $text-color          #F6C177 
+client.focused          #f6c177             #f6c177           $bg-color          #F6C177 
 client.unfocused        $inactive-bg-color  $inactive-bg-color  $inactive-text-color #232136
 client.focused_inactive $inactive-bg-color  $inactive-bg-color  $inactive-text-color #232136
 client.urgent           $urgent-bg-color    $urgent-bg-color    $text-color          #EB6F92
@@ -208,8 +211,8 @@ bar {
             font pango: Agave Nerd Font, Regular 16
             colors {
                 background $bg-color
-                    separator #757575
-#                   border             background         text
+                    separator $inactive-text-color
+                    #                   border             background         text
                     focused_workspace  $bg-color          $bg-color          $text-color
                     inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
                     urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
@@ -235,9 +238,13 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 exec firefox
+exec copyq
 
 bindsym $mod+Shift+x exec i3lock --color "$bg-color"
 bindsym $mod+b exec firefox
+bindsym $mod+v exec exec copyq toggle
+for_window [class="copyq"] floating enable
+for_window [class="copyq"] sticky enable
 
 exec_always feh --bg-scale /home/soulus/.config/i3/wallpaper.png
 exec_always /home/soulus/.config/i3/arandr.sh
@@ -246,6 +253,6 @@ exec_always "setxkbmap -layout us,ge"
 exec_always "setxkbmap -option 'grp:alt_shift_toggle'" 
 
 exec /usr/lib/pentablet/PenTablet.sh
-exec_always compton
+exec_always picom
 for_window [class="PenTablet" instance="PenTablet"] floating enable
 
