@@ -51,7 +51,7 @@ alias mkgocha='~/makegocha.sh'
 alias mkcpp='~/makecpp.sh'
 alias mkweb='mkdir js css; cp ~/Templates/html.html index.html; cp ~/Templates/javascript.js js/index.js; cp ~/Templates/css.css css/style.css'
 
-
+alias copy='xclip -selection clipboard'
 
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
@@ -62,3 +62,4 @@ if [ -d ~/.bashrc.d ]; then
     done
 fi
 unset rc
+. "$HOME/.cargo/env"
