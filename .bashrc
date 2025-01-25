@@ -38,7 +38,7 @@ export PATH
 # 4 	Underlined text
 
 force_color_prompt=yes
-PS1="\[\e[1;33;100m\]\u \[\e[90;41m\] \w\[\e[0;31m\]\[\e[0m\] "
+PS1="\[\e[1;93m\]\u \[\e[30;103m\] \[\e[3m\]\w\[\e[0;93m\]\[\e[0m\] "
 
 
 alias l='ls -a'
@@ -62,4 +62,3 @@ if [ -d ~/.bashrc.d ]; then
     done
 fi
 unset rc
-. "$HOME/.cargo/env"
