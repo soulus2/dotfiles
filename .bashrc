@@ -38,7 +38,7 @@ export PATH
 # 4 	Underlined text
 
 force_color_prompt=yes
-PS1="\[\e[1;93m\]\u \[\e[30;103m\] \[\e[3m\]\w\[\e[0;93m\]\[\e[0m\] "
+PS1="\[\e[1;91m\]<\h>\n\[\e[93m\]\u\[\e[1;30;103m\] \[\e[3m\]\W\[\e[0;93m\]\[\e[0m\] "
 
 
 alias l='ls -a'
@@ -46,10 +46,6 @@ alias c='clear'
 alias ..='cd ..'
 alias gcs='cd ~/Github/CS-1/'
 alias gweb='cd ~/Github/WEB-1/'
-
-alias mkgocha='~/makegocha.sh'
-alias mkcpp='~/makecpp.sh'
-alias mkweb='mkdir js css; cp ~/Templates/html.html index.html; cp ~/Templates/javascript.js js/index.js; cp ~/Templates/css.css css/style.css'
 
 alias copy='xclip -selection clipboard'
 
