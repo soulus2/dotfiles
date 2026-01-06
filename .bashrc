@@ -38,7 +38,7 @@ export PATH
 # 4 	Underlined text
 
 force_color_prompt=yes
-PS1="\[\e[1;91m\]<\h>\n\[\e[93m\]\u\[\e[1;30;103m\] \[\e[3m\]\W\[\e[0;93m\]\[\e[0m\] "
+PS1="\[\e[1;91m\]<\h>\n\[\e[93m\](\u) \[\e[3;94m\]\W\[\e[0m\] "
 
 
 alias l='ls -a'
