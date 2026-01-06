@@ -4,6 +4,10 @@
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
+# Enable bash-completion (system-wide completions, incl. pacman)
+if [[ -r /usr/share/bash-completion/bash_completion ]]; then
+  source /usr/share/bash-completion/bash_completion
+fi
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
@@ -58,3 +62,7 @@ if [ -d ~/.bashrc.d ]; then
     done
 fi
 unset rc
+ # fzf: Ctrl+T file search, Alt+C cd into dirs, etc.
+[[ -r /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
+[[ -r /usr/share/fzf/completion.bash ]] && source /usr/share/fzf/completion.bash
+
